@@ -1,0 +1,6 @@
+C:\Users\USUARIO\source\repos\TPC_BAREA_COSMO\Dominio\bin\Debug\Dominio.dll
+C:\Users\USUARIO\source\repos\TPC_BAREA_COSMO\Dominio\bin\Debug\Dominio.pdb
+C:\Users\USUARIO\source\repos\TPC_BAREA_COSMO\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\USUARIO\source\repos\TPC_BAREA_COSMO\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\source\repos\TPC_BAREA_COSMO\Dominio\obj\Debug\Dominio.dll
+C:\Users\USUARIO\source\repos\TPC_BAREA_COSMO\Dominio\obj\Debug\Dominio.pdb
