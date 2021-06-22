@@ -4,20 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Dominio;
-using Negocio;
 
 namespace Vistas
 {
-    public partial class About : Page
+    public partial class Site1 : System.Web.UI.MasterPage
     {
-        public List<Producto> lista = new List<Producto>();
         protected void Page_Load(object sender, EventArgs e)
         {
-        ProductoNegocio nego = new ProductoNegocio();
 
-            lista = nego.listar();
-             
         }
     }
 }

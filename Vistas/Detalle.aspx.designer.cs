@@ -11,7 +11,7 @@ namespace Vistas
 {
 
 
-    public partial class About
+    public partial class Detalle
     {
     }
 }

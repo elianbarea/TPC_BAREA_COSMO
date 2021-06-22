@@ -13,7 +13,7 @@ namespace Negocio
         private SqlConnection conexion;
         private SqlCommand comando;
         public SqlDataReader lector;
-        string conectar = "data source=DESKTOP-UGVRLNH\\SQLEXPRESS; initial catalog=CATALOGO_DB; integrated security=sspi";
+        string conectar = "data source=.\\SQLEXPRESS; initial catalog=TIENDA; integrated security=sspi";
      
        /// el constructor se encarga de crear la conexion con la db
         public AccesoDatos()
