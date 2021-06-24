@@ -60,6 +60,8 @@
       </div>
     </div>
   </div>
+          <a class="nav-link" href="Iniciar Sesion.aspx" style="float:left">Iniciar Sesion</a>
+            <a class="nav-link" href="Registrarse.aspx" style="float:left">Registrarse</a>
 </nav>
 
     <div class="container body-content">
