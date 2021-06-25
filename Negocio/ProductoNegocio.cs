@@ -26,6 +26,7 @@ namespace Negocio
                 while (datos.lector.Read())
                 {
                     Producto aux = new Producto();
+                    aux.Id = (int)datos.lector["ID"];
                     aux.UrlImagen = (string)datos.lector["Imagen"];
                     aux.Nombre = (string)datos.lector["Nombre"];
                     aux.Descripion = (string)datos.lector["Descripcion"];

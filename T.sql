@@ -1,3 +1,5 @@
+use BluePrint
+drop database TIENDA
 
 CREATE DATABASE TIENDA
 GO
@@ -54,11 +56,19 @@ Direccion VARCHAR (40) NOT NULL,
 Telefono VARCHAR (20) NOT NULL,
 )
 
+
+
 CREATE TABLE Carrito (
+ID int primary key identity (1,1) not null,
 DNIpersona varchar(8) NOT NULL FOREIGN KEY REFERENCES DetalleUsuarios (DNI),
-Subtotal money not null,
+total  money not null,
+)
+
+CREATE TABLE ProductoXcarrito(
+IDcarrito int foreign key references Carrito (ID),
 IdArticulo int foreign key references Articulos (ID),
-cantidad varchar (5) not null,
+sub_total money default (0) not null,
+cantidad int default (0) not null
 )
 
 CREATE TABLE DETALLE_COMPRA(
@@ -81,5 +91,6 @@ insert into Marcas values ('Gigabyte ')
 insert into Categorias values ('Mothers')
 Insert into Articulos (Nombre, Imagen, Descripcion,Idmarca,Precio,Stock,Idcategoria)
 Values ('Mother Gigabyte H310M-H LGA 1151 ', 'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_7715_Mother_Gigabyte_H310M-H_LGA_1151_8va_gen__bdf6e65f-grn.jpg',
-' Plataforma Intel, Socket 1151 Coffe Lake,  ',3 , 6000,4 ,2)
+' Plataforma Intel, Socket 1151 Coffe Lake,  ',2 , 6000,4 ,2)
 
+ 
