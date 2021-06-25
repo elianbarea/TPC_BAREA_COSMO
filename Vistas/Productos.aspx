@@ -9,12 +9,21 @@
        {
            %>
      
-  
-    <div class="col-4">
-     
-   <div class="card">
+<%--  <div class="card m-lg-3" style="width: 18rem;">
+  <img src="<%=item.UrlImagen %>" class="card-img-top" alt="...">
   <div class="card-body">
-      <img src="<%=item.UrlImagen %>" height="100" width="100"/>
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>--%>
+
+   <div class="col-4">
+     
+   <div class="card" style="width: 18rem;">
+       <div class="card-header text-center"> <img src="<%=item.UrlImagen %>" height="100" width="100"/> </div>
+  <div class="card-body">
+
     <h5 class="card-title"><%=item.Nombre %></h5>
     <p class="card-text"><%=item.Descripion %></p>
       <p class="card-text">$<%=item.Precio %></p>
