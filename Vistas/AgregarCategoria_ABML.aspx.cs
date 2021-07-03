@@ -9,16 +9,18 @@ using Negocio;
 
 namespace Vistas
 {
-    public partial class ABML_CATEGORIA : System.Web.UI.Page
+    public partial class AgregarMarca_ABML : System.Web.UI.Page
     {
-        public List<Categoria> arti;
         CategoriaNegocio nego = new CategoriaNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            arti = nego.listar_Categoria();
         }
-        
-        
+
+        protected void txTagregar_Click(object sender, EventArgs e)
+        {
+            nego.eliminar_Categoria("INSERT INTO Categorias (Nombre) VALUES ('" + txtNombre.Text + "');");
+            Response.Redirect("ABML_CATEGORIA.aspx");
+        }
     }
 }

@@ -11,7 +11,8 @@ namespace Negocio
 {
    public class ProductoNegocio
     {
-       public List<Producto> listar()
+        AccesoDatos ace = new AccesoDatos();
+        public List<Producto> listar()
         {
              ///crea una lista de tipo producto
                 List<Producto> lista = new List<Producto>();
@@ -43,5 +44,28 @@ namespace Negocio
                 throw ex;
             }
         }
+
+       public void Registrar_Usuario(string consulta)
+        {
+           
+            ace.setearConsulta(consulta);
+            ace.EjecutarLectura();
+        }
+
+        public void modificar_producto()
+        {
+
+        }
+        public void eliminar_producto(string consulta)
+        {
+            ace.setearConsulta(consulta);
+            ace.EjecutarLectura();
+        }
+        public void suspender_producto()
+        {
+
+        }
+        
     }
+
 }

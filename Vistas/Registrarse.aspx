@@ -6,23 +6,24 @@
 <div style="justify-content:center;" >
 
       <h5 style="">Nombre de usuario</h5>
-    <input class=" mb-4" type="text" id="Txtnombre" placeholder="" style="width:300px"/>
+    <asp:TextBox ID="txtnombre" runat="server"></asp:TextBox>
             
        <h5 style="">Correo electronico</h5>
-    <input class="mb-4" type="text" id="txtcorreo" style="width:300px" placeholder="fulanito@gmail..."/>
+    <asp:TextBox ID="txtcorreo" runat="server"></asp:TextBox>
             
        <h5 style="">Direccion</h5>
-    <input class="mb-4" type="text" id="Txtdireccion" placeholder="" style="width:300px"/>
+    <asp:TextBox ID="txtdireccion" runat="server"></asp:TextBox>
            
        <h5 style="">Numero de telefono</h5>
-    <input class="mb-4" type="number" id="Txttelefono" placeholder="" style="width:300px"/>
+    <asp:TextBox ID="txttelefono" runat="server"></asp:TextBox>
            
             <h5 style="">Contraseña</h5>
-    <input class="mb-4" type="password" id="TxtContraseña" placeholder="" style="width:300px"/>
+    
+            
+    <br />
+    <asp:TextBox ID="txtcontraseña" runat="server"></asp:TextBox>
             <br />
-    <asp:CheckBox ID="ckbrecordar" runat="server" Text="Teminos y condiciones" />
-            <br />
-    <asp:Button class="mb-4; btn-dark" ID="Btniniciar" runat="server" Text="Registrarse" />
+    <asp:Button class="mb-4; btn-dark" ID="Btniniciar" runat="server" Text="Registrarse" OnClick="Btniniciar_Click" />
          
             
 
