@@ -32,6 +32,7 @@ namespace Negocio
                     aux.Nombre = (string)datos.lector["Nombre"];
                     aux.Descripion = (string)datos.lector["Descripcion"];
                     aux.Precio = datos.lector.GetSqlMoney(5);
+                    aux.estado = (bool)datos.lector["Estado"];
 
                     lista.Add(aux);
 
@@ -56,6 +57,8 @@ namespace Negocio
         {
 
         }
+
+
         public void eliminar_producto(string consulta)
         {
             ace.setearConsulta(consulta);

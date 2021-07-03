@@ -26,8 +26,11 @@
                         <% foreach (Dominio.Producto item in lista)
                             {
                         %>
-
-
+                        <% if (item.estado == true)
+                                
+                            {%>
+                            
+                           
                         <tr>
                             <th scope="row"><%=item.Id %></th>
                             <td>
@@ -41,13 +44,13 @@
                             </td>
                             <td><a href="#" class="btn btn-outline-secondary  btn-sm">MODIFICAR</a></td>
                             <td><a href="#" class="btn btn-outline-secondary  btn-sm">SUSPENDER</a></td>
-                            <td><a href="#" class="btn btn-outline-danger  btn-sm">ELIMINAR</a></td>
-
-
+                            <td><a href="ABML_PRODUCTO.aspx?ELIMINAR=<% = item.Id.ToString() %>" class="btn btn-outline-danger  btn-sm">ELIMINAR</a></td>
 
                         </tr>
-                        <%} %>
-                    </tbody>
+                              <%} %>
+
+                        <%} %> 
+                    </tbody> 
                 </table>
 
 

@@ -9,9 +9,12 @@ namespace Vistas
 {
     public partial class Iniciar_Sesion : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
+                
         }
     }
 }
