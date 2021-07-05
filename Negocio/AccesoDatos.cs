@@ -41,6 +41,13 @@ namespace Negocio
             ///EJECUTA LA LECTURA DEL COMANDO Y LO GUARDA EN LECTOR YA EJECUTADO
             lector = comando.ExecuteReader();
         }
+
+         public void AgregarParametro (string nombre, string valor)
+        {
+
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
+
         //se encarga de cerrar la conexion
         public void cerrarConexion()
         {

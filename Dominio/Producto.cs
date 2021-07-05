@@ -16,8 +16,10 @@ namespace Dominio
         public Marca  Marca { get; set; }
         public Categoria Categoria { get; set; }
         public bool estado { get; set; }
+        public int stock { get; set; }
         public  string UrlImagen { get; set; }
         public SqlMoney Precio { get; set; }
 
     }
+
 }

@@ -16,13 +16,14 @@ namespace Negocio
         {
              ///crea una lista de tipo producto
                 List<Producto> lista = new List<Producto>();
-            AccesoDatos datos = new AccesoDatos();
+                   AccesoDatos datos = new AccesoDatos();
 
             try
             {
-                datos.setearConsulta("SELECT * from Articulos");
+                datos.setearConsulta("SELECT * from listar_articulo");
                 datos.EjecutarLectura();
-               
+
+
                 ///realiza una lectura de la tablita(que es lector)
                 while (datos.lector.Read())
                 {
@@ -31,8 +32,19 @@ namespace Negocio
                     aux.UrlImagen = (string)datos.lector["Imagen"];
                     aux.Nombre = (string)datos.lector["Nombre"];
                     aux.Descripion = (string)datos.lector["Descripcion"];
-                    aux.Precio = datos.lector.GetSqlMoney(5);
+                    aux.Precio = datos.lector.GetSqlMoney(7);
                     aux.estado = (bool)datos.lector["Estado"];
+                    aux.stock = (int)datos.lector["Stock"];  
+
+                    aux.Marca = new Marca();
+                    aux.Marca.Nombre = (string)datos.lector["MARCA"];
+                    aux.Marca.IDmarca = (int)datos.lector["idmarca"];
+
+                    aux.Categoria = new Categoria();
+                    aux.Categoria.Nombre = (string)datos.lector["CATEGORIA"];
+                    aux.Categoria.IDcategoria = (int)datos.lector["idcategoria"];
+                  
+                  
 
                     lista.Add(aux);
 
@@ -53,8 +65,25 @@ namespace Negocio
             ace.EjecutarLectura();
         }
 
-        public void modificar_producto()
+
+
+        public void modificar_producto(Producto pr)
         {
+            AccesoDatos datos = new AccesoDatos();
+
+            datos.setearConsulta("update Articulos set (Nombre = @nombre, Imagen = @IMG, Descripcion = @descrip, Precio = @precio, Idmarca = @marca, Idcategoria = @categoria, Stock = @stock, Estado = @estado )");
+            datos.AgregarParametro("@nombre", pr.Nombre);
+            datos.AgregarParametro("@descrip", pr.Descripion);
+            datos.AgregarParametro("@stock", Convert.ToString(pr.stock) );
+            datos.AgregarParametro("@precio", Convert.ToString (pr.Precio) );
+            datos.AgregarParametro("@marca", Convert.ToString( pr.Marca));
+            datos.AgregarParametro("@categoria", Convert.ToString(pr.Categoria));
+            datos.AgregarParametro("@estado", Convert.ToString( pr.estado));
+            datos.AgregarParametro("@IMG", pr.UrlImagen) ;
+            datos.EjecutarLectura();
+            
+
+
 
         }
 

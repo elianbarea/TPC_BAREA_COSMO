@@ -20,13 +20,24 @@ namespace Vistas
             var ID1 = Request.QueryString["ELIMINAR"];
             if (ID1 != null) 
             {
-                nego.eliminar_producto("update Articulos set Estado = 0 where ID =" + ID1);
-
-                         
-
-                    lista = nego.listar();
-           
+                nego.eliminar_producto("delete from Articulos where ID =" + ID1);
+                lista = nego.listar();
             }
+
+            var ID2 = Request.QueryString["SUSPENDER"];
+            if (ID2 != null) {
+                nego.eliminar_producto("update Articulos set Estado = 0 where ID =" + ID2);
+                lista = nego.listar();
+            }
+
+            var ID3 = Request.QueryString["ACTIVAR"];
+            if (ID3 != null) {
+                nego.eliminar_producto("update Articulos set Estado = 1 where ID =" + ID3);
+                lista = nego.listar();
+            }
+
+
+
 
 
 

@@ -6,6 +6,7 @@ GO
 
 USE TIENDA
 
+select nombre from Marcas where ID = 
 
 CREATE TABLE Marcas(
 ID int  Primary key identity (1,1) not null,
@@ -93,4 +94,14 @@ Insert into Articulos (Nombre, Imagen, Descripcion,Idmarca,Precio,Stock,Idcatego
 Values ('Mother Gigabyte H310M-H LGA 1151 ', 'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_7715_Mother_Gigabyte_H310M-H_LGA_1151_8va_gen__bdf6e65f-grn.jpg',
 ' Plataforma Intel, Socket 1151 Coffe Lake,  ',2 , 6000,4 ,2)
 
- 
+ go
+create view listar_articulo as 
+select a.Descripcion, a.Estado, a.ID, a.Idcategoria,
+a.Idmarca, a.Imagen, a.Nombre, a.Precio, a.Stock,
+m.Nombre MARCA, c.Nombre CATEGORIA
+
+from Articulos a
+inner join Marcas m on m.ID = a.Idmarca
+inner join Categorias c on C.ID = a.Idcategoria
+
+select * from Articulos
