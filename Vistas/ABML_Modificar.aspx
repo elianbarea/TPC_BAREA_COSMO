@@ -34,10 +34,10 @@
     </div>
 <div class="col"><div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label"></label>
-       <asp:TextBox runat="server" placeholder="Estado (1 A 0 S)" class="form-control" id="txtEstado" />  
+       <asp:TextBox runat="server"  Text="1" class="form-control" id="txtEstado" />  
 </div>
 </div>
-
+   
 <div class="col"><div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label"></label>
        <asp:TextBox runat="server" placeholder="Descripcion"  class="form-control" id="txtDesc" />  

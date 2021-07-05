@@ -71,13 +71,14 @@ namespace Negocio
         {
             AccesoDatos datos = new AccesoDatos();
 
-            datos.setearConsulta("update Articulos set (Nombre = @nombre, Imagen = @IMG, Descripcion = @descrip, Precio = @precio, Idmarca = @marca, Idcategoria = @categoria, Stock = @stock, Estado = @estado )");
+            datos.setearConsulta("update Articulos set Nombre = @nombre, Imagen = @IMG, Descripcion = @descrip, Idmarca = @marca, Precio = @precio, Stock = @stock, Estado = @estado, Idcategoria = @categoria where Id = @id");
+            datos.AgregarParametro("@id", Convert.ToString( pr.Id) );
             datos.AgregarParametro("@nombre", pr.Nombre);
             datos.AgregarParametro("@descrip", pr.Descripion);
             datos.AgregarParametro("@stock", Convert.ToString(pr.stock) );
             datos.AgregarParametro("@precio", Convert.ToString (pr.Precio) );
-            datos.AgregarParametro("@marca", Convert.ToString( pr.Marca));
-            datos.AgregarParametro("@categoria", Convert.ToString(pr.Categoria));
+            datos.AgregarParametro("@marca", Convert.ToString( pr.Marca.IDmarca));
+            datos.AgregarParametro("@categoria", Convert.ToString(pr.Categoria.IDcategoria));
             datos.AgregarParametro("@estado", Convert.ToString( pr.estado));
             datos.AgregarParametro("@IMG", pr.UrlImagen) ;
             datos.EjecutarLectura();

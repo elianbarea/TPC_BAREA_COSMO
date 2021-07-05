@@ -11,7 +11,7 @@ namespace Vistas
 {
     public partial class ABML_Modificar : System.Web.UI.Page
     {
-        public Producto producto;
+        public Producto producto ;
         public List<Marca> marca;
         public List<Categoria> categorias;
         protected void Page_Load(object sender, EventArgs e)
@@ -23,10 +23,23 @@ namespace Vistas
 
                 int id = int.Parse (Request.QueryString["id"]);
 
+
                 List<Producto> lista = new List<Producto>();
                 lista = nego.listar();
                 producto = lista.Find(x => x.Id == id);
 
+                // rellena los campos de txt
+                txtnombre.Text = producto.Nombre;
+                txtDesc.Text = producto.Descripion;
+                txtPrecio.Text = Convert.ToString(producto.Precio);
+                txtStock.Text = Convert.ToString(producto.stock);
+                txtURL.Text = producto.UrlImagen;
+
+
+
+
+                ///
+                
 
                 marca = marcanegocio.listar_marca();
                 DropDownList1.DataSource = marca;
@@ -51,11 +64,11 @@ namespace Vistas
 
         
                 Producto auxmodificar = new Producto();
-     
+            var id = Request.QueryString["id"];
 
 
-
-
+            if (id != null) { 
+                auxmodificar.Id = Convert.ToInt32( id);
                 auxmodificar.Nombre = txtnombre.Text;
                 auxmodificar.Descripion = txtDesc.Text;
                 if (txtEstado.Text == "1") {
@@ -69,7 +82,7 @@ namespace Vistas
                 auxmodificar.UrlImagen = txtURL.Text;
 
                 productomodificado.modificar_producto(auxmodificar);
-
+}
 
 
 
