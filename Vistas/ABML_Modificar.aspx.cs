@@ -14,19 +14,26 @@ namespace Vistas
         public Producto producto ;
         public List<Marca> marca;
         public List<Categoria> categorias;
+        public MarcaNegocio marcanegocio = new MarcaNegocio();
+        public CategoriaNegocio catego = new CategoriaNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
             try {
                 ProductoNegocio nego = new ProductoNegocio();
-                MarcaNegocio marcanegocio = new MarcaNegocio();
-                CategoriaNegocio catego = new CategoriaNegocio();
+                
+               
+                int indexcatego;
+                int indexmarca;
 
                 int id = int.Parse (Request.QueryString["id"]);
 
-
+                ///cargamos lista
                 List<Producto> lista = new List<Producto>();
                 lista = nego.listar();
-                producto = lista.Find(x => x.Id == id);
+                producto = lista.Find( i=> i.Id == id);
+                ///
+
+                if(!IsPostBack) { 
 
                 // rellena los campos de txt
                 txtnombre.Text = producto.Nombre;
@@ -34,21 +41,22 @@ namespace Vistas
                 txtPrecio.Text = Convert.ToString(producto.Precio);
                 txtStock.Text = Convert.ToString(producto.stock);
                 txtURL.Text = producto.UrlImagen;
+                    ///
 
-
-
-
-                ///
-                
+                 
 
                 marca = marcanegocio.listar_marca();
+                 indexmarca= marca.FindIndex(x => x.IDmarca == producto.Marca.IDmarca );
                 DropDownList1.DataSource = marca;
+                DropDownList1.SelectedIndex = indexmarca;
                 DropDownList1.DataBind();
 
                 categorias = catego.listar_Categoria();
+                indexcatego = categorias.FindIndex(d => d.IDcategoria == producto.Categoria.IDcategoria);
                 DropDownList2.DataSource = categorias;
+                DropDownList2.SelectedIndex = indexcatego;
                 DropDownList2.DataBind();
-
+  }
 
             }
             catch (Exception) {
@@ -64,6 +72,12 @@ namespace Vistas
 
         
                 Producto auxmodificar = new Producto();
+                marca = marcanegocio.listar_marca();
+                categorias = catego.listar_Categoria();
+            
+
+                
+
             var id = Request.QueryString["id"];
 
 
@@ -77,15 +91,15 @@ namespace Vistas
                 else { auxmodificar.estado = false; }
                 auxmodificar.Precio = Convert.ToDecimal(txtPrecio.Text);
                 auxmodificar.stock = int.Parse(txtStock.Text);
-                auxmodificar.Marca = marca.Find(x => x.Nombre == DropDownList1.SelectedValue);
-                auxmodificar.Categoria = categorias.Find(x => x.Nombre == DropDownList2.SelectedValue);
+                auxmodificar.Marca = marca.Find(c => c.Nombre == DropDownList1.SelectedValue);
+                auxmodificar.Categoria = categorias.Find(h=> h.Nombre == DropDownList2.SelectedValue);
                 auxmodificar.UrlImagen = txtURL.Text;
 
                 productomodificado.modificar_producto(auxmodificar);
 }
 
 
-
+            Response.Redirect("ABML_PRODUCTO");
         }
     }
 }

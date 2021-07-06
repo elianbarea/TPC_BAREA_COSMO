@@ -11,7 +11,7 @@
 
 
             <div class="d-grid gap-2">
-                <a href="#" class="btn btn-outline-success mb-5" type="button">AGREGAR PRODUCTO</a>
+                <a href="AGREGAR_PRODUCTO.aspx" class="btn btn-outline-success mb-5" type="button">AGREGAR PRODUCTO</a>
             </div>
 
             <div class="col-12">

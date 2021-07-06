@@ -110,6 +110,7 @@
     <Content Include="ABML_Modificar.aspx" />
     <Content Include="ABML_PRODUCTO.aspx" />
     <Content Include="AgregarCategoria_ABML.aspx" />
+    <Content Include="AGREGAR_PRODUCTO.aspx" />
     <Content Include="AMBL_MARCA.aspx" />
     <Content Include="Carrito.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -203,6 +204,13 @@
     </Compile>
     <Compile Include="AgregarCategoria_ABML.aspx.designer.cs">
       <DependentUpon>AgregarCategoria_ABML.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AGREGAR_PRODUCTO.aspx.cs">
+      <DependentUpon>AGREGAR_PRODUCTO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AGREGAR_PRODUCTO.aspx.designer.cs">
+      <DependentUpon>AGREGAR_PRODUCTO.aspx</DependentUpon>
     </Compile>
     <Compile Include="AMBL_MARCA.aspx.cs">
       <DependentUpon>AMBL_MARCA.aspx</DependentUpon>
