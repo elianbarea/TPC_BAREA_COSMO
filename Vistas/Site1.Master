@@ -57,8 +57,8 @@
         <li>  <a class="nav-link" href="Default">Inicio</a></li>
         <li> <a class="nav-link" href="Productos">Productos</a></li>
         <li> <a class="nav-link" href="Carrito">Carrito</a> </li>
-        <li > <a class="nav-link" href="Iniciar Sesion.aspx">Iniciar Sesion</a></li>
-        <li > <a class="nav-link" href="Iniciar Sesion.aspx">Registrarte</a></li>
+        <li > <a class="nav-link btn btn-outline-primary" href="Iniciar Sesion.aspx">Iniciar Sesion</a></li>
+        <li > <a class="nav-link btn btn-outline-primary" href="Iniciar Sesion.aspx">Registrarte</a></li>
          
       </ul>
     </div>

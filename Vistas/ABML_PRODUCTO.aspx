@@ -10,9 +10,7 @@
         <div class="row align-items-center">
 
 
-            <div class="d-grid gap-2">
-                <a href="AGREGAR_PRODUCTO.aspx" class="btn btn-outline-success mb-5" type="button">AGREGAR PRODUCTO</a>
-            </div>
+            
 
             <div class="col-12">
                 <table class="table">
@@ -47,7 +45,9 @@
                             <%if (item.estado == false) {%><td><a href="ABML_PRODUCTO.aspx?ACTIVAR=<% = item.Id.ToString() %>" class="btn btn-outline-success  btn-sm">ACTIVAR</a></td><%} %>
                             <%else{ %><td><a href="ABML_PRODUCTO.aspx?SUSPENDER=<% = item.Id.ToString() %>" class="btn btn-outline-secondary  btn-sm">SUSPENDER</a></td><%} %>
                             <td><a href="ABML_PRODUCTO.aspx?ELIMINAR=<% = item.Id.ToString() %>" class="btn btn-outline-danger  btn-sm">ELIMINAR</a></td>
-
+                            
+                            <td><a href="AGREGAR_PRODUCTO.aspx?id=<% = item.Id %>" class="btn btn-outline-success btn-sm" type="button">AGREGAR PRODUCTO</a></td> 
+          
                         </tr>
                              
 

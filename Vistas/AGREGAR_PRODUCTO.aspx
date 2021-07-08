@@ -27,11 +27,11 @@
 </div>
 </div>
           <div class="col; mt-2" ><div class="mb-3">Marca
-              <asp:DropDownList  ID="DropDownList1"   runat="server" class="form-control" ></asp:DropDownList>
+              <asp:DropDownList  ID="DropDownList3"   runat="server" class="form-control" ></asp:DropDownList>
 </div>
     </div>
           <div class="col; mt-2" ><div class="mb-3">Categoria
-              <asp:DropDownList  ID="DropDownList2" runat="server" class="form-control" ></asp:DropDownList>
+              <asp:DropDownList  ID="DropDownList4" runat="server" class="form-control" ></asp:DropDownList>
 </div>
     </div>
 <div class="col"><div class="mb-3">
@@ -48,7 +48,7 @@
   </div>
 
 <div class="d-grid gap-2; mt-3">
-       <asp:Button Text="MODIFICAR PRODUCTO" class="btn btn-outline-success mb-5" runat="server" />
+       <asp:Button Text="AGREGAR PRODUCTO" class="btn btn-outline-success mb-5" runat="server" OnClick="Unnamed1_Click" />
             </div>
 </div>
 

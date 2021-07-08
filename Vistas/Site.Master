@@ -47,14 +47,15 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+      <div class="navbar-nav  ">
         <a class="nav-link" href="Default">Inicio</a>
         <a class="nav-link" href="Productos">Productos</a>
           <a class="nav-link" href="Carrito">Carrito</a>
+        <a class="nav-link   m-lg-2" href="Iniciar Sesion.aspx" style="float:left; color:black">Iniciar Sesion</a>
+        <a class="nav-link   m-lg-2" href="Registrarse.aspx" style="float:left; color:black">Registrarse</a>
       </div>
     </div>
-      <a class="nav-link btn btn-primary w-25" href="Iniciar Sesion.aspx" style="float:left; color:black">Iniciar Sesion</a>
-            <a class="nav-link btn btn-primary m-lg-2" href="Registrarse.aspx" style="float:left; color:black">Registrarse</a>
+     
   </div>
 </nav>
 
