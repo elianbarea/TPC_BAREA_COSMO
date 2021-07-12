@@ -18,42 +18,11 @@ namespace Vistas
 
 
             ProductoNegocio nego = new ProductoNegocio();
-            try {
-                lista = nego.listar();
-                repetidor.DataSource = lista;
-                repetidor.DataBind();
 
-            }
-            catch (Exception) {
-
-                throw;
-            }
-            
+            lista = nego.listar();
 
 
 
-        }
-
-        protected void Buscar_Click(object sender, EventArgs e)
-        {
-            List<Producto> filtro;
-
-            try {
-                if (txtbuscar.Text == "") filtro = lista;
-
-
-                else {
-                    filtro = lista.FindAll(PAPA => PAPA.Nombre.ToLower().Contains(txtbuscar.Text.ToLower()));
-                    repetidor.DataSource = filtro;
-                    repetidor.DataBind();
-
-                }
-
-            }
-            catch (Exception) {
-
-                throw;
-            }
         }
     }
 }

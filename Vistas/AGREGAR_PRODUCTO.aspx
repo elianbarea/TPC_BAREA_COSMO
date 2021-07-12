@@ -34,10 +34,15 @@
               <asp:DropDownList  ID="DropDownList4" runat="server" class="form-control" ></asp:DropDownList>
 </div>
     </div>
+<div class="col"><div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"></label>
+       <asp:TextBox runat="server"  Text="1" class="form-control" id="txtEstado" />  
+</div>
+</div>
    
 <div class="col"><div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label"></label>
-       <asp:TextBox runat="server" placeholder="Descripcion"  class="form-control mt-2" id="txtDesc" />  
+       <asp:TextBox runat="server" placeholder="Descripcion"  class="form-control" id="txtDesc" />  
 </div>
 </div>
   </div>
