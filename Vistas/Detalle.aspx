@@ -9,10 +9,11 @@
         <!--CONTENEDOR DE PRODUCTOS -->
         <div class="row align-items-center">
 
-            
-            <div class="col-7">
+
+
+                            <div class="col-7">
                 <div class="card mt-4">
-                    <p>imagen</p>
+                    <img src="<% = producto.UrlImagen %>" alt="Alternate Text" />
                     <div class="card-body">
                         
                         
@@ -25,11 +26,11 @@
               <div class="col"  >
                 <div class="card mt-3">
                     <div class="card-body" style="height: 500px">
-                        <h3>Nombre</h3>
+                        <h3><% = producto.Nombre %></h3>
                      
 
-                        <p>  Marca</p>
-                        <p>Precio</p>
+                        <p>  <%= producto.Marca %></p>
+                        <p><% = producto.Precio %></p>
                         
                             <button class="btn-danger"> 
                                 <a class="nav-link fs-7" style="color:black;" href="#">
@@ -45,10 +46,17 @@
                         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-4">
-           <p>Descripcion</p>
+           <p><%= producto.Descripion %></p>
                 </div>
             </div>
         </div>
 </div>
+                           
+                             
+
+                 
+
+            
+            
 
 </asp:Content>

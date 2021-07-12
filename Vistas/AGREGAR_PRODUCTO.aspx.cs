@@ -22,39 +22,18 @@ namespace Vistas
                 ProductoNegocio nego = new ProductoNegocio();
 
 
-                int indexcatego;
-                int indexmarca;
-
-                int id = int.Parse(Request.QueryString["id"]);
-
-                ///cargamos lista
-                List<Producto> lista = new List<Producto>();
-                lista = nego.listar();
-                producto = lista.Find(i => i.Id == id);
-                ///
 
                 if (!IsPostBack) {
 
-                    // rellena los campos de txt
-                    txtnombre.Text = producto.Nombre;
-                    txtDesc.Text = producto.Descripion;
-                    txtPrecio.Text = Convert.ToString(producto.Precio);
-                    txtStock.Text = Convert.ToString(producto.stock);
-                    txtURL.Text = producto.UrlImagen;
-                    ///
 
 
 
                     marca = marcanegocio.listar_marca();
-                    indexmarca = marca.FindIndex(x => x.IDmarca == producto.Marca.IDmarca);
                     DropDownList3.DataSource = marca;
-                    DropDownList3.SelectedIndex = indexmarca;
                     DropDownList3.DataBind();
 
                     categorias = catego.listar_Categoria();
-                    indexcatego = categorias.FindIndex(d => d.IDcategoria == producto.Categoria.IDcategoria);
                     DropDownList4.DataSource = categorias;
-                    DropDownList4.SelectedIndex = indexcatego;
                     DropDownList4.DataBind();
                 }
 
@@ -87,10 +66,7 @@ namespace Vistas
                 AGREGAR.Id = Convert.ToInt32(id);
                 AGREGAR.Nombre = txtnombre.Text;
                 AGREGAR.Descripion = txtDesc.Text;
-                if (txtEstado.Text == "1") {
-                    AGREGAR.estado = true;
-                }
-                else { AGREGAR.estado = false; }
+                AGREGAR.estado = true;                
                 AGREGAR.Precio = Convert.ToDecimal(txtPrecio.Text);
                 AGREGAR.stock = int.Parse(txtStock.Text);
                 AGREGAR.Marca = marca.Find(c => c.Nombre == DropDownList3.SelectedValue);
